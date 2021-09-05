@@ -1,20 +1,21 @@
-const express = require('express');
+const express = require("express");
+
 const app = express();
-const morgan = require('morgan');
+const morgan = require("morgan");
 
 // settings
-app.set('port', process.env.PORT || 8000);
-app.set('json spaces', 2);
+app.set("port", process.env.PORT || 8000);
+app.set("json spaces", 2);
 
 // middlewares
-app.use(morgan('dev'));
-app.use(express.urlencoded({extended: false}));
+app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // routes
-app.use(require('./routes/index.js'));
+app.use(require("./routes"));
 
 // starting the server
-app.listen(app.get('port'), () => {
-    console.log(`Server on port ${app.get('port')}`);
+app.listen(app.get("port"), () => {
+  console.log(`Server on port ${app.get("port")}`);
 });
