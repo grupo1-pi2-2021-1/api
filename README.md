@@ -46,7 +46,7 @@ Para a contribuição e evolução das informações presentes nesse repositóri
 
 ### [**Issues**](#Sumário)
 
-As issues devem ser criadas conforme template predefinido, contendo:
+As issues devem ser criadas no Trello conforme template predefinido, contendo:
 
 * ***Descrição*** - Descrição simples e direta do problema que a issue busca resolver ou da adição da issue;
 
@@ -54,15 +54,7 @@ As issues devem ser criadas conforme template predefinido, contendo:
 
 * ***Critérios de Aceitação*** - *Checklist* do funcionamento ou resultado esperado após a conclusão da issue de forma satisfatória, permitindo que cada critério seja marcado quando concluído;
 
-* ***Issue Vinculada*** - Referência a outra issue que esteja vinculada à issue presente, com link para a issue referenciada. Caso não haja issue, deve ser preenchido como 'Não se aplica.' somente;
-
 * ***Assignees*** - As issues criadas devem ser atribuídas a um membro para execução, se houver alguém responsável por realizá-la;
-
-* ***Labels*** - As issues criadas devem conter labels que categorizem aquela issue, para informar aos demais contribuidores sobre a natureza de seu conteúdo;
-
-* ***Sprint*** - As issues devem possuir a sprint a qual se referem no campo destinado;
-
-* ***Estimate*** - As issues devem ser pontuadas conforme seu grau de dificuldade;
 
 #### **Nomenclatura**
 
