@@ -77,9 +77,7 @@ De forma que o elemento **PREFIXO** siga o seguinte padrão
 
 ### [**Branches**](#Sumário)
 
-Para a padronização das branches foi tomada uma adaptação do modelo padrão do [gitflow](https://nvie.com/posts/a-successful-git-branching-model/) conforme representado pelo diagrama abaixo:
-
-![gitflow-adapted](./images/gitflow_adapted_tag.png)
+Para a padronização das branches foi tomada uma adaptação do modelo padrão do [gitflow](https://nvie.com/posts/a-successful-git-branching-model/).
 
 Esse modelo segue a seguinte categorização para as respectivas branches:
 
