@@ -21,7 +21,11 @@ while (tries > 0) {
                     CREATE TABLE RESPONSAVEL_TECNICO (
                         idResponsavel SERIAL,
                         nome varchar(30),
+<<<<<<< HEAD
                         telefone varchar(30),
+=======
+                        telefone varchar(30)
+>>>>>>> 253c0f9e6ef03313e5547e3e0d70e4604f460a27
                         CONSTRAINT RESPONSAVEL_TECNICO_PK PRIMARY KEY(idResponsavel)
                     );
                     CREATE TABLE HISTORICO (
@@ -30,10 +34,16 @@ while (tries > 0) {
                         procedimento varchar(100),
                         ambulancia varchar(100),
                         etapa int,
+<<<<<<< HEAD
                         responsavelId int,
                         CONSTRAINT HISTORICO_PK PRIMARY KEY (id),
                         CONSTRAINT HISTORICO_RESPONSAVEL_FK FOREIGN KEY (responsavelId)
                             REFERENCES RESPONSAVEL_TECNICO (idResponsavel)
+=======
+                        CONSTRAINT HISTORICO_PK PRIMARY KEY (id),
+                        CONSTRAINT HISTORICO_RESPONSAVEL_FK FOREIGN KEY (responsavelId)
+                            REFERENCES PROFESSOR (idResponsavel)
+>>>>>>> 253c0f9e6ef03313e5547e3e0d70e4604f460a27
                     );
                     `, (err, res) => {
                         if (err) {
