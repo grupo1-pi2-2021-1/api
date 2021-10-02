@@ -26,8 +26,10 @@
   },
   "homepage": "https://github.com/grupo1-pi2-2021-1/api#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
