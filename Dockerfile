@@ -2,7 +2,7 @@ FROM node:16-alpine3.11
 
 WORKDIR /app
 
-VOLUME .:/app
+#VOLUME .:/app
 
 COPY ./package.json .
 
