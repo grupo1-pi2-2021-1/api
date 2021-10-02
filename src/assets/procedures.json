@@ -1,0 +1,23 @@
+{
+    "1": {
+        "name": "Esterelização completa",
+        "etapas": {
+            "1" : "Posicionar aparelho",
+            "2" : "Fechar janelas"
+        }
+    },
+    "2" : {
+        "name": "Esterelização rapida",
+        "etapas": {
+            "1" : "Posicionar aparelho",
+            "2" : "Fechar janelas"
+        }
+    },
+    "3" : {
+        "name": "Esterelização com ozônio",
+        "etapas": {
+            "1" : "Posicionar aparelho",
+            "2" : "Fechar janelas"
+        }
+    }
+}

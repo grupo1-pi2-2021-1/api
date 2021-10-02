@@ -10,4 +10,14 @@ router.get("/test", (req, res) => {
   res.json(data);
 });
 
+router.get("/procedure", (res) => {
+  const data = require("../assets/procedures.json");
+  res.json(data);
+});
+
+router.get("/procedure/:id", (req, res) => {
+  const data = require("../assets/procedures.json");
+  res.json(data[req.params.id]);
+})
+
 module.exports = router;
