@@ -1,10 +1,21 @@
 require('dotenv').config();
 const { Pool, Client } = require('pg');
-const connectionString = process.env.DB_URL;
+
+const {
+    DB_USER,
+    DB_PASS,
+    DB,
+    PGHOST,
+    PGPORT,
+} = process.env;
 let tries = 5;
 
 const pool = new Pool({
-    connectionString: connectionString,
+    host:PGHOST,
+    user:DB_USER,
+    password:DB_PASS,
+    database:DB,
+    port:PGPORT,
 });
 
 while (tries > 0) {
@@ -12,8 +23,7 @@ while (tries > 0) {
         pool.query("SELECT * FROM pg_catalog.pg_tables WHERE schemaname != 'pg_catalog' AND schemaname != 'information_schema'", (err, res) => {
             if (err)
                 console.log(err);
-            else {
-                if (!res.rowCount) {
+            else if (!res.rowCount) {
                     console.log("Database not found");
                     console.log("Creating");
                     
@@ -21,11 +31,7 @@ while (tries > 0) {
                     CREATE TABLE RESPONSAVEL_TECNICO (
                         idResponsavel SERIAL,
                         nome varchar(30),
-<<<<<<< HEAD
                         telefone varchar(30),
-=======
-                        telefone varchar(30)
->>>>>>> 253c0f9e6ef03313e5547e3e0d70e4604f460a27
                         CONSTRAINT RESPONSAVEL_TECNICO_PK PRIMARY KEY(idResponsavel)
                     );
                     CREATE TABLE HISTORICO (
@@ -34,17 +40,15 @@ while (tries > 0) {
                         procedimento varchar(100),
                         ambulancia varchar(100),
                         etapa int,
-<<<<<<< HEAD
                         responsavelId int,
                         CONSTRAINT HISTORICO_PK PRIMARY KEY (id),
                         CONSTRAINT HISTORICO_RESPONSAVEL_FK FOREIGN KEY (responsavelId)
                             REFERENCES RESPONSAVEL_TECNICO (idResponsavel)
-=======
-                        CONSTRAINT HISTORICO_PK PRIMARY KEY (id),
-                        CONSTRAINT HISTORICO_RESPONSAVEL_FK FOREIGN KEY (responsavelId)
-                            REFERENCES PROFESSOR (idResponsavel)
->>>>>>> 253c0f9e6ef03313e5547e3e0d70e4604f460a27
                     );
+
+                    INSERT INTO RESPONSAVEL_TECNICO (nome, telefone) VALUES
+                        ('Responsavel_1', 61988888888),
+                        ('Responsavel_2', 61977777777);
                     `, (err, res) => {
                         if (err) {
                             console.log("Failed creating Database");
@@ -55,12 +59,9 @@ while (tries > 0) {
                     });
                 }
 
-                else if (res.rowCount != 7)
-                    throw '\x1b[33mFaulty database in project\n\x1b[33mDelete dbdata and start project again';
-
                 else
                     console.log('Database \x1b[32mOK\x1b[0m');
-            }
+            
         });
         break;
     } catch (err) {
@@ -70,7 +71,5 @@ while (tries > 0) {
     }
 }
 module.exports = {
-    query: (text, params, callback) => {
-        return pool.query(text, params, callback);
-    },
+    query: (text, params, callback) => pool.query(text, params, callback),
 }
