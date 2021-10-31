@@ -1,6 +1,6 @@
-# Higienizador de Ambulâncias API
+# Esterilizador de Ambulâncias API
 
-Repositório do api do app de Higienizador de Ambulâncias
+Repositório do api do app de Esterilizador de Ambulâncias
 
 ## Sumário
 
