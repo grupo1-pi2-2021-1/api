@@ -13,7 +13,9 @@ export async function up(knex: Knex) {
         table.integer('procedure_id')
             .notNullable()
             .references('id')
-            .inTable('procedure');   
+            .inTable('procedure');  
+            
+        table.dateTime('hour').notNullable();
     })
 }
 

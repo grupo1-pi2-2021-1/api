@@ -4,8 +4,9 @@ export async function up(knex: Knex) {
     //criar tabela
     return knex.schema.createTable('ambulate', table => {
         table.increments('id').primary();
-        table.string('type').notNullable();
+        table.string('title').notNullable();
         table.string('description').notNullable();
+        table.integer('type').notNullable();
     })
 }
 

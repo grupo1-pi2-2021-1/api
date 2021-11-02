@@ -8,6 +8,7 @@
     "dev": "nodemon src/index.js",
     "tsc": "npx ts-node-dev src/server.ts",
     "knex:migrate": "knex migrate:latest --knexfile knexfile.ts migrate:latest",
+    "knex:seed": "knex --knexfile knexfile.ts seed:run",
     "test": "jest",
     "lint": "eslint . --ext .js"
   },
