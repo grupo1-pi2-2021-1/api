@@ -1,11 +1,12 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Repositório do api do app de Esterilizador de Ambulâncias",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
+    "tsc": "npx ts-node-dev src/server.ts",
     "test": "jest",
     "lint": "eslint . --ext .js"
   },
@@ -27,9 +28,12 @@
   "homepage": "https://github.com/grupo1-pi2-2021-1/api#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "knex": "^0.95.12",
+    "morgan": "^1.10.0",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -37,6 +41,10 @@
     "jest": "^27.1.0",
     "nodemon": "^2.0.12",
     "prettier": "^2.3.2",
-    "supertest": "^6.1.6"
-  }
+    "supertest": "^6.1.6",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4"
+  },
+  "keywords": []
 }
