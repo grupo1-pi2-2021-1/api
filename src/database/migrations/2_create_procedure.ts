@@ -1,3 +1,4 @@
+import { json } from "express";
 import knex, { Knex } from "knex";
 
 export async function up(knex: Knex) {
@@ -6,7 +7,9 @@ export async function up(knex: Knex) {
         table.increments('id').primary();
         table.string('title').notNullable();
         table.string('description').notNullable();
-        table.integer('executionTime').notNullable();
+        table.string('type').notNullable();
+        table.jsonb('steps');
+        table.string('time').notNullable();
     })
 }
 
