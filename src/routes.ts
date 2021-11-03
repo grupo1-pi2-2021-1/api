@@ -8,9 +8,12 @@ const routes = express.Router();
 routes.post("/user", async (request, response) => {
   const { name, phone } = request.body;
 
-  await knex("users").insert({ name, phone });
-
-  return response.json({ name, phone });
+  await knex("users").insert({ name, phone }).returning('id')
+  .into('users')
+  .then(function (id) {
+    // use id here
+    return response.json({ id });
+  });
 });
 
 routes.get("/ambulances", async (request, response) => {
@@ -18,10 +21,10 @@ routes.get("/ambulances", async (request, response) => {
 
   const serializedItems = ambulances.map((item) => {
     return {
-      id: item.id,
       title: item.title,
       description: item.description,
-      type: item.type,
+      id: item.id,
+      //type: item.type,
     };
   });
 
@@ -37,7 +40,7 @@ routes.get("/procedures", async (request, response) => {
       name: item.name,
       description: item.description,
       time: item.time,
-      //id: item.id,
+      id: item.id,
     };
   });
 
@@ -89,6 +92,7 @@ routes.get("/:id/listProcedures", async (request, response) => {
       name: item.name,
       title: item.title,
       hour: new Date(item.hour).toLocaleString("pt-BR"),
+      id: item.id
     };
   });
 
