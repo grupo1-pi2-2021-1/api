@@ -5,13 +5,11 @@ export async function up(knex: Knex) {
   return knex.schema.createTable("steps", (table) => {
     table.increments("id").primary();
 
-    table.integer('procedure_id')
-    .references('id')
-    .inTable('procedure'); 
+    table.integer("procedure_id").references("id").inTable("procedure");
 
     table.string("name").notNullable();
     table.string("description").notNullable();
-    table.string('time');
+    table.string("time");
   });
 }
 
