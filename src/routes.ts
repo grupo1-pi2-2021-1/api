@@ -70,7 +70,7 @@ routes.post("/addProcedureHistory", async (request, response) => {
 
   await knex("history_procedure").insert({ user_id, procedure_id, hour });
 
-  return response.json({ user_id, procedure_id, hour });
+  return response.json({ sucess: "Deu certo" });
 });
 
 routes.get("/:id/listProcedures", async (request, response) => {
