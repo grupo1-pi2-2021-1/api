@@ -5,6 +5,10 @@ const routes = express.Router();
 
 //JSON.stringify(item.steps)
 
+routes.get("/", async(request, response) => {
+  return response.json({"msg": "success"})
+})
+
 routes.post("/user", async (request, response) => {
   const { name, phone } = request.body;
 
